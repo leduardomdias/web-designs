@@ -16,8 +16,9 @@ Futuristic interfaces with neon colors, glitch effects, and sci-fi aesthetics. F
 ### 📼 2. Y2K (Ano 2000)
 
 Nostalgic Y2K design featuring metallic gradients, bold typography, and early-2000s internet aesthetic elements.
+[See More](/Y2K/)
 
-_Coming soon_
+![Y2K Preview](/Y2K/assets/preview.gif)
 
 ### 🕹️ 3. Pixel Art / Retro Futurismo
 
