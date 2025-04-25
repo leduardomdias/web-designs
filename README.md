@@ -11,7 +11,7 @@ This repository contains implementations of popular and emerging web design aest
 Futuristic interfaces with neon colors, glitch effects, and sci-fi aesthetics. Features include animated elements, text flickering, and immersive backgrounds.
 [See More](/Cyberpunk%20UI%20-%20Vaporwave/)
 
-![Cyberpunk Preview](Cyberpunk%20UI%20-%20Vaporwave/preview.gif)
+![Cyberpunk Preview](Cyberpunk%20UI%20-%20Vaporwave/assets/preview.gif)
 
 ### 📼 2. Y2K (Ano 2000)
 
