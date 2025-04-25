@@ -4,7 +4,7 @@ A futuristic cyberpunk-styled login interface featuring neon effects, animated e
 
 <div align="center">
 
-![Cyberpunk Login Interface Preview](/Cyberpunk%20UI%20-%20Vaporwave/preview.gif)
+![Cyberpunk Login Interface Preview](/Cyberpunk%20UI%20-%20Vaporwave/assets/preview.gif)
 
 </div>
 
