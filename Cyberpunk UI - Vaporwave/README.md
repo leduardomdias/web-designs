@@ -88,10 +88,6 @@ font-family: "Share Tech Mono", monospace; /* For text and inputs */
 - Browser support: Modern browsers that support CSS animations and HTML5 video
 - For mobile optimization, consider using a static image fallback for the video background
 
-## 📷 Screenshots
-
-Place screenshots of your implementation in a `screenshots` folder and link them here.
-
 ## 🔗 Credits
 
 - Fonts: Google Fonts (Orbitron, Share Tech Mono)
