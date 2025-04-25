@@ -74,7 +74,7 @@ To view a design:
 Clone this repository to explore all designs locally:
 
 ```bash
-git clone https://github.com/yourusername/web-designs.git
+git clone https://github.com/leduardomdias/web-designs.git
 cd web-designs
 ```
 
