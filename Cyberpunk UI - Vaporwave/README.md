@@ -2,7 +2,11 @@
 
 A futuristic cyberpunk-styled login interface featuring neon effects, animated elements, and a video background. This project creates an immersive sci-fi experience inspired by cyberpunk and vaporwave aesthetics.
 
+<div align="center">
+
 ![Cyberpunk Login Interface Preview](/Cyberpunk%20UI%20-%20Vaporwave/preview.gif)
+
+</div>
 
 ## ✨ Features
 
