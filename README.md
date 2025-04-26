@@ -15,7 +15,7 @@ Futuristic interfaces with neon colors, glitch effects, and sci-fi aesthetics. F
 
 ### 📼 2. Y2K (Ano 2000)
 
-Nostalgic Y2K design featuring metallic gradients, bold typography, and early-2000s internet aesthetic elements.
+Nostalgic Y2K design featuring metallic gradients, bold typography, and early-2000s internet aesthetic elements. <br>
 [See More](/Y2K/)
 
 ![Y2K Preview](/Y2K/assets/preview.gif)
@@ -75,7 +75,7 @@ To view a design:
 Clone this repository to explore all designs locally:
 
 ```bash
-git clone https://github.com/yourusername/web-designs.git
+git clone https://github.com/leduardomdias/web-designs.git
 cd web-designs
 ```
 
