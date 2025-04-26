@@ -30,8 +30,9 @@ Pixel-based graphics combined with retro-futuristic elements creating a nostalgi
 ### 📚 4. Swiss / Tipográfico Puro
 
 Minimalist design focused on typographic hierarchy, whitespace, and grid-based layouts inspired by International Typographic Style.
+[See More](/Swiss%20-%20Tipográfico%20Puro/)
 
-_Coming soon_
+![Swiss Design Preview](/Swiss%20-%20Tipográfico%20Puro/assets/preview.png)
 
 ### 🟥 5. Bauhaus Moderno
 

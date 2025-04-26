@@ -1,0 +1,219 @@
+:root {
+  --red: #ff2b2b;
+  --black: #000000;
+  --dark-gray: #333333;
+  --light-gray: #f5f5f5;
+  --white: #ffffff;
+  --grid-unit: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--light-gray);
+  font-family: "Inter", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  display: grid;
+  grid-template-columns: [full-start] 1fr [content-start] minmax(280px, 560px) [content-end] 1fr [full-end];
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--black);
+  line-height: 1.5;
+}
+
+header {
+  grid-column: full-start / full-end;
+  padding: calc(var(--grid-unit) * 3);
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+main {
+  grid-column: content-start / content-end;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: calc(var(--grid-unit) * 3);
+  align-items: center;
+  padding: calc(var(--grid-unit) * 3);
+}
+
+footer {
+  grid-column: full-start / full-end;
+  font-size: 12px;
+  padding: calc(var(--grid-unit) * 3);
+  color: var(--dark-gray);
+  text-align: center;
+}
+
+.design-element {
+  grid-column: 1 / 5;
+  height: 80%;
+  background-color: var(--red);
+}
+
+.login-container {
+  grid-column: 6 / 13;
+  background-color: var(--white);
+  padding: calc(var(--grid-unit) * 6);
+  border-radius: 0;
+  width: 100%;
+  position: relative;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: calc(var(--grid-unit) * 6);
+  color: var(--black);
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: calc(var(--grid-unit) * 3);
+}
+
+.form-input {
+  grid-column: 1 / 9;
+  position: relative;
+  margin-bottom: calc(var(--grid-unit) * 4);
+}
+
+.input-field {
+  width: 100%;
+  padding: calc(var(--grid-unit) * 2) 0;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid var(--dark-gray);
+  color: var(--black);
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.input-field:focus {
+  outline: none;
+  border-bottom-color: var(--red);
+}
+
+.input-label {
+  position: absolute;
+  bottom: calc(var(--grid-unit) * 2);
+  left: 0;
+  font-size: 16px;
+  color: var(--dark-gray);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+  transform: translateY(-24px) scale(0.75);
+  color: var(--red);
+  transform-origin: left top;
+}
+
+.input-field::placeholder {
+  color: transparent;
+}
+
+.submit-row {
+  grid-column: 1 / 9;
+  margin-top: calc(var(--grid-unit) * 4);
+  display: flex;
+  justify-content: flex-start;
+}
+
+button {
+  padding: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 4);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: inherit;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--red);
+}
+
+.grid-markers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.grid-marker {
+  border-right: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.swiss-element {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: var(--red);
+  bottom: calc(var(--grid-unit) * 3);
+  right: calc(var(--grid-unit) * 3);
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns:
+      [full-start] var(--grid-unit) [content-start] 1fr [content-end] var(
+        --grid-unit
+      )
+      [full-end];
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .design-element {
+    display: none;
+  }
+
+  .login-container {
+    grid-column: 1 / -1;
+    padding: calc(var(--grid-unit) * 4);
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-input {
+    grid-column: 1 / -1;
+  }
+
+  .submit-row {
+    grid-column: 1 / -1;
+  }
+}
