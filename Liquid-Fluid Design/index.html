@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Design Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <div class="container">
+        <div class="blob-container">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <div class="login-card" id="login-card">
+            <div class="liquid-border">
+                <svg viewBox="0 0 500 500" preserveAspectRatio="none">
+                    <path id="border-path" fill="none" stroke="url(#border-gradient)" stroke-width="4"></path>
+                    <linearGradient id="border-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="500" y2="500">
+                        <stop offset="0%" stop-color="var(--primary)" />
+                        <stop offset="50%" stop-color="var(--tertiary)" />
+                        <stop offset="100%" stop-color="var(--secondary)" />
+                    </linearGradient>
+                </svg>
+            </div>
+
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Sign in to continue your journey</p>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" class="form-input" id="username" placeholder="Username">
+                        <label for="username" class="input-label">Username</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="password" class="form-input" id="password" placeholder="Password">
+                        <label for="password" class="input-label">Password</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="liquid-button" id="login-button">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cursorFollower = document.getElementById('cursor-follower');
+            const loginCard = document.getElementById('login-card');
+
+            document.addEventListener('mousemove', function (e) {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+
+                const rect = loginCard.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                const angleX = (e.clientY - centerY) / 15;
+                const angleY = (centerX - e.clientX) / 15;
+
+                loginCard.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+            });
+
+            const borderPath = document.getElementById('border-path');
+            animateLiquidBorder();
+
+            function animateLiquidBorder() {
+                const duration = 6000;
+                const startTime = Date.now();
+
+                function updatePath() {
+                    const now = Date.now();
+                    const elapsed = now - startTime;
+                    const t = (elapsed % duration) / duration;
+
+                    const points = 8;
+                    const pathData = [];
+
+                    pathData.push('M');
+
+                    for (let i = 0; i <= points; i++) {
+                        const angle = (i / points) * Math.PI * 2;
+                        const x = 250 + Math.cos(angle) * (250 + Math.sin(angle + t * Math.PI * 2) * 15);
+                        const y = 250 + Math.sin(angle) * (250 + Math.cos(angle + t * Math.PI * 2) * 15);
+
+                        if (i === 0) {
+                            pathData.push(`${x},${y}`);
+                        } else {
+                            const prevAngle = ((i - 1) / points) * Math.PI * 2;
+                            const cpx1 = 250 + Math.cos(prevAngle + 0.1) * (250 + Math.sin(prevAngle + t * Math.PI * 2) * 18);
+                            const cpy1 = 250 + Math.sin(prevAngle + 0.1) * (250 + Math.cos(prevAngle + t * Math.PI * 2) * 18);
+
+                            const cpx2 = 250 + Math.cos(angle - 0.1) * (250 + Math.sin(angle + t * Math.PI * 2) * 18);
+                            const cpy2 = 250 + Math.sin(angle - 0.1) * (250 + Math.cos(angle + t * Math.PI * 2) * 18);
+
+                            pathData.push(`C ${cpx1},${cpy1} ${cpx2},${cpy2} ${x},${y}`);
+                        }
+                    }
+
+                    pathData.push('Z');
+                    borderPath.setAttribute('d', pathData.join(' '));
+
+                    requestAnimationFrame(updatePath);
+                }
+
+                updatePath();
+            }
+
+            const loginButton = document.getElementById('login-button');
+
+            loginButton.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const bubble = document.createElement('span');
+                bubble.className = 'liquid-button-bubble';
+                bubble.style.left = `${x}px`;
+                bubble.style.top = `${y}px`;
+
+                this.appendChild(bubble);
+
+                setTimeout(() => {
+                    bubble.remove();
+                }, 600);
+
+                this.textContent = 'Signing in...';
+                setTimeout(() => {
+                    this.textContent = 'Sign In';
+                }, 2000);
+            });
+
+            const inputs = document.querySelectorAll('.form-input');
+
+            inputs.forEach(input => {
+                input.addEventListener('focus', function () {
+                    cursorFollower.style.width = '60px';
+                    cursorFollower.style.height = '60px';
+                    cursorFollower.style.backgroundColor = 'rgba(108, 99, 255, 0.1)';
+                });
+
+                input.addEventListener('blur', function () {
+                    cursorFollower.style.width = '40px';
+                    cursorFollower.style.height = '40px';
+                    cursorFollower.style.backgroundColor = 'rgba(108, 99, 255, 0.15)';
+                });
+            });
+
+            function isMobileDevice() {
+                return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('Mobile') !== -1);
+            }
+
+            if (isMobileDevice()) {
+                document.body.classList.add('mobile');
+                cursorFollower.style.display = 'none';
+                loginCard.style.transform = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

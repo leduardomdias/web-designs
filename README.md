@@ -62,6 +62,13 @@ Dynamic text-focused design where typography becomes interactive through motion 
 
 ![Kinetic Typography Preview](/Kinetic%20Typography/assets/preview.gif)
 
+### 💧 9. Liquid/Fluid Design
+
+Organic interfaces featuring amorphous shapes and flowing elements that transform and morph in response to user interaction, creating a natural and dynamic experience.
+[See More](/Liquid-Fluid%20Design/)
+
+![Liquid/Fluid Design Preview](/Liquid-Fluid%20Design/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
