@@ -51,8 +51,9 @@ Contemporary approach to realistic interface design mimicking physical objects w
 ### 🧼 7. Claymorphism
 
 Soft, pillowy interfaces with subtle shadows and pastel colors creating a friendly, tactile appearance.
+[See More](/Claymorphism/)
 
-_Coming soon_
+![Claymorphism Preview](/Claymorphism/assets/preview.png)
 
 ## 📋 How to Use
 
