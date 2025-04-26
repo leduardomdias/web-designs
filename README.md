@@ -44,8 +44,9 @@ Modern interpretation of Bauhaus design principles featuring geometric shapes, p
 ### 🧳 6. Skeuomorphism 2.0
 
 Contemporary approach to realistic interface design mimicking physical objects with modern twists and improvements.
+[See More](/Skeuomorphism%202.0/)
 
-_Coming soon_
+![Skeuomorphism 2.0 Preview](/Skeuomorphism%202.0/assets/preview.png)
 
 ### 🧼 7. Claymorphism
 
