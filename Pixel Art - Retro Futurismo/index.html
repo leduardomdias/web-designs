@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="login-container">
+        <div class="pixel-decoration decoration-1"></div>
+        <div class="pixel-decoration decoration-2"></div>
+        <div class="pixel-decoration decoration-3"></div>
+        <div class="pixel-decoration decoration-4"></div>
+
+        <div class="login-header">
+            <div class="pixel-art-avatar"></div>
+            <h1>Login</h1>
+        </div>
+
+        <form>
+            <div class="input-wrapper">
+                <div class="icon icon-user"></div>
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-wrapper">
+                <div class="icon icon-lock"></div>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Enter</button>
+        </form>
+    </div>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        const starsCount = 100;
+
+        for (let i = 0; i < starsCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+
+            const size = Math.floor(Math.random() * 3) + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+
+            star.style.animation = `blink ${Math.random() * 3 + 1}s infinite ${Math.random() * 3}s`;
+
+            starsContainer.appendChild(star);
+        }
+
+        const pixelCount = 20;
+
+        for (let i = 0; i < pixelCount; i++) {
+            const pixel = document.createElement('div');
+            pixel.classList.add('pixel');
+
+            pixel.style.left = `${Math.random() * 100}%`;
+            pixel.style.bottom = `${Math.random() * 20}%`;
+
+            const duration = Math.random() * 15 + 5;
+            const delay = Math.random() * 5;
+            pixel.style.animationDuration = `${duration}s`;
+            pixel.style.animationDelay = `${delay}s`;
+
+            pixel.style.backgroundColor = Math.random() > 0.5 ? '#00ffaa' : '#ff00aa';
+
+            document.body.appendChild(pixel);
+        }
+    </script>
+</body>
+
+</html>

@@ -23,8 +23,9 @@ Nostalgic Y2K design featuring metallic gradients, bold typography, and early-20
 ### 🕹️ 3. Pixel Art / Retro Futurismo
 
 Pixel-based graphics combined with retro-futuristic elements creating a nostalgic gaming-inspired interface.
+[See More](/Pixel%20Art%20-%20Retro%20Futurismo/)
 
-_Coming soon_
+![Pixel Art Preview](/Pixel%20Art%20-%20Retro%20Futurismo/assets/preview.gif)
 
 ### 📚 4. Swiss / Tipográfico Puro
 
