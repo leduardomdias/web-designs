@@ -37,8 +37,9 @@ Minimalist design focused on typographic hierarchy, whitespace, and grid-based l
 ### 🟥 5. Bauhaus Moderno
 
 Modern interpretation of Bauhaus design principles featuring geometric shapes, primary colors, and functional design elements.
+[See More](/Bauhaus%20Moderno/)
 
-_Coming soon_
+![Bauhaus Moderno Preview](/Bauhaus%20Moderno/assets/preview.png)
 
 ### 🧳 6. Skeuomorphism 2.0
 
@@ -60,8 +61,8 @@ Each design style is contained in its own folder with the following structure:
 Design Style Name/
 ├── index.html       # Main HTML implementation
 ├── style.css        # CSS styling
-├── preview.gif      # Visual preview
-├── README.md        # Documentation specific to this design
+├── preview.gif/png  # Visual preview
+├── README.md
 └── assets/          # Additional resources (images, videos, etc.)
 ```
 
