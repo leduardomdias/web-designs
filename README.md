@@ -55,6 +55,13 @@ Soft, pillowy interfaces with subtle shadows and pastel colors creating a friend
 
 ![Claymorphism Preview](/Claymorphism/assets/preview.png)
 
+### 🔤 8. Kinetic Typography
+
+Dynamic text-focused design where typography becomes interactive through motion and animation, transforming static text into the primary interactive element.
+[See More](/Kinetic%20Typography/)
+
+![Kinetic Typography Preview](/Kinetic%20Typography/assets/preview.gif)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
