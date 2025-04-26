@@ -67,7 +67,7 @@ Dynamic text-focused design where typography becomes interactive through motion 
 Organic interfaces featuring amorphous shapes and flowing elements that transform and morph in response to user interaction, creating a natural and dynamic experience.
 [See More](/Liquid-Fluid%20Design/)
 
-![Liquid/Fluid Design Preview](/Liquid-Fluid%20Design/assets/preview.png)
+![Liquid/Fluid Design Preview](/Liquid-Fluid%20Design/assets/preview.gif)
 
 ## 📋 How to Use
 
