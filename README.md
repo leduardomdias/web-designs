@@ -83,6 +83,13 @@ A three-dimensional visual approach that creates the illusion of depth and persp
 
 ![Isometric Interface Design Preview](/Isometric%20Interface%20Design/assets/preview.png)
 
+### ⌨️ 12. Terminal/Command Line Aesthetic
+
+Nostalgic interface design that emulates text-based computer terminals, featuring monospaced fonts, command prompt interactions, blinking cursors, and hacker-inspired visual elements for a technical, authentic experience.
+[See More](/Terminal%20-%20Command%20Line%20Aesthetic/)
+
+![Terminal/Command Line Aesthetic Preview](/Terminal%20-%20Command%20Line%20Aesthetic/assets/preview.gif)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:

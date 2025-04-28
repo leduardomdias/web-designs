@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="matrix-bg">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <main class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <span>$</span>
+                <span>secure-login@system</span>
+            </div>
+            <div class="terminal-controls">
+                <div class="control-dot control-minimize"></div>
+                <div class="control-dot control-maximize"></div>
+                <div class="control-dot control-close"></div>
+            </div>
+        </div>
+
+        <div class="terminal-body" id="terminal-body">
+            <div class="terminal-ascii-art">
+                _____ _ _ _ _
+                / ____| (_) | | | | (_)
+                | (___ ___ ___ _ _ _ _ ___ | | | |_ _ _ _ __ ___ _ _ __
+                \___ \ / _ \/ __| | | | | |/ _ \ | | | __| | | '_ \/ __| | '_ \
+                ____) | __/ (__| |_| | | | __/ | | | |_| | | | | \__ \ | | | |
+                |_____/ \___|\___|\__,_|_| |\___| |_| \__|_|_|_| |_|___/_|_| |_|
+                _/ |
+                |__/
+            </div>
+
+            <p class="terminal-line">
+                <span class="terminal-prompt">system@user:~$</span>
+                <span class="terminal-command">initialize_login_protocol --secure</span>
+            </p>
+
+            <p class="terminal-line terminal-response">
+                > Login protocol initialized.
+                <br>> Please authenticate to continue.
+                <br>> Enter credentials when prompted.
+            </p>
+
+            <form class="terminal-form" id="login-form">
+                <div class="terminal-input-group">
+                    <span class="terminal-prompt-symbol">$</span>
+                    <label for="username" class="blinking-cursor" id="username-label">username:</label>
+                    <input type="text" id="username" class="terminal-input" autocomplete="off">
+                    <p class="terminal-error" id="username-error">ERROR: Username required</p>
+                </div>
+
+                <div class="terminal-input-group">
+                    <span class="terminal-prompt-symbol">$</span>
+                    <label for="password" class="blinking-cursor" id="password-label">password:</label>
+                    <input type="password" id="password" class="terminal-input" autocomplete="off">
+                    <p class="terminal-error" id="password-error">ERROR: Password required</p>
+                </div>
+
+                <div class="terminal-progress" id="login-progress">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <div class="loader" id="loader">
+                    <p class="loader-text">Authenticating...</p>
+                </div>
+
+                <button type="submit" class="terminal-button" id="login-btn">authenticate</button>
+            </form>
+        </div>
+
+        <div class="terminal-footer">
+            <div class="terminal-status">
+                <div class="status-indicator"></div>
+                <span>Connection: Secure</span>
+            </div>
+            <div>v2.5.0</div>
+        </div>
+    </main>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let chars = ['0', '1', 'A', 'B', '\u30A2', '\u30DF', '\u30E1'];
+        let drops = [];
+
+        function resizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+
+            drops = [];
+            const columns = Math.floor(width / 20);
+            for (let i = 0; i < columns; i++) {
+                drops[i] = Math.floor(Math.random() * -30);
+            }
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
+            ctx.fillRect(0, 0, width, height);
+
+            ctx.fillStyle = '#98C379';
+            ctx.font = '16px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * 20, drops[i] * 20);
+
+                if (drops[i] * 20 > height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 50);
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const usernameLabel = document.getElementById('username-label');
+            const passwordLabel = document.getElementById('password-label');
+            const loginForm = document.getElementById('login-form');
+            const usernameError = document.getElementById('username-error');
+            const passwordError = document.getElementById('password-error');
+            const loginProgress = document.getElementById('login-progress');
+            const progressBar = document.getElementById('progress-bar');
+            const loader = document.getElementById('loader');
+            const terminalBody = document.getElementById('terminal-body');
+
+            usernameInput.addEventListener('focus', function () {
+                usernameLabel.classList.remove('blinking-cursor');
+                this.classList.add('blinking-cursor');
+            });
+
+            usernameInput.addEventListener('blur', function () {
+                this.classList.remove('blinking-cursor');
+                if (!passwordInput.matches(':focus')) {
+                    usernameLabel.classList.add('blinking-cursor');
+                }
+            });
+
+            passwordInput.addEventListener('focus', function () {
+                usernameLabel.classList.remove('blinking-cursor');
+                passwordLabel.classList.remove('blinking-cursor');
+                this.classList.add('blinking-cursor');
+            });
+
+            passwordInput.addEventListener('blur', function () {
+                this.classList.remove('blinking-cursor');
+                if (!usernameInput.matches(':focus')) {
+                    passwordLabel.classList.add('blinking-cursor');
+                }
+            });
+
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                usernameError.classList.remove('active');
+                passwordError.classList.remove('active');
+
+                const username = usernameInput.value.trim();
+                const password = passwordInput.value.trim();
+                let isValid = true;
+
+                if (!username) {
+                    usernameError.classList.add('active');
+                    usernameError.textContent = 'ERROR: Username required';
+                    isValid = false;
+                }
+
+                if (!password) {
+                    passwordError.classList.add('active');
+                    passwordError.textContent = 'ERROR: Password required';
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    loginProgress.style.display = 'block';
+                    loader.style.display = 'block';
+
+                    let progress = 0;
+                    const progressInterval = setInterval(() => {
+                        progress += Math.random() * 15;
+                        if (progress > 100) progress = 100;
+                        progressBar.style.width = progress + '%';
+
+                        if (progress === 100) {
+                            clearInterval(progressInterval);
+
+                            setTimeout(() => {
+                                if (username === 'admin' && password === 'password') {
+                                    appendTerminalLine('system@user:~$', 'authenticate --user=' + username);
+                                    appendTerminalResponse([
+                                        '> Authentication successful',
+                                        '> Access granted to system',
+                                        '> Creating secure session...',
+                                        '> Welcome back, ' + username
+                                    ]);
+
+                                    setTimeout(() => {
+                                        appendTerminalLine('system@user:~$', 'redirect --destination="dashboard"');
+                                        appendTerminalResponse(['> Redirecting to dashboard...']);
+
+                                    }, 1500);
+                                } else {
+                                    appendTerminalLine('system@user:~$', 'authenticate --user=' + username);
+                                    appendTerminalResponse([
+                                        '> Authentication failed',
+                                        '> Invalid username or password',
+                                        '> Please try again'
+                                    ], 'error');
+
+                                    loginProgress.style.display = 'none';
+                                    loader.style.display = 'none';
+                                }
+                            }, 800);
+                        }
+                    }, 100);
+                }
+            });
+
+            function appendTerminalLine(prompt, command) {
+                const line = document.createElement('p');
+                line.className = 'terminal-line';
+                line.innerHTML = `<span class="terminal-prompt">${prompt}</span><span class="terminal-command">${command}</span>`;
+                terminalBody.appendChild(line);
+                terminalBody.scrollTop = terminalBody.scrollHeight;
+                return line;
+            }
+
+            function appendTerminalResponse(responses, type = '') {
+                const response = document.createElement('p');
+                response.className = 'terminal-line terminal-response';
+                if (type === 'error') {
+                    response.classList.add('terminal-error');
+                    response.classList.add('active');
+                } else if (type === 'success') {
+                    response.classList.add('terminal-success');
+                }
+
+                response.innerHTML = responses.map(line => `${line}`).join('<br>');
+                terminalBody.appendChild(response);
+                terminalBody.scrollTop = terminalBody.scrollHeight;
+                return response;
+            }
+
+            usernameLabel.classList.add('blinking-cursor');
+        });
+    </script>
+</body>
+
+</html>
