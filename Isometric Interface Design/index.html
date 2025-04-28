@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isometric Login | Design Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Grid -->
+    <div class="background">
+        <div class="grid-container">
+            <div class="grid"></div>
+        </div>
+    </div>
+
+    <!-- Floating Isometric Elements -->
+    <div class="iso-element element-1">
+        <div class="iso-cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+    </div>
+
+    <div class="iso-element element-2">
+        <div class="iso-pyramid">
+            <div class="pyramid-face pyramid-front"></div>
+            <div class="pyramid-face pyramid-right"></div>
+            <div class="pyramid-face pyramid-back"></div>
+            <div class="pyramid-face pyramid-left"></div>
+            <div class="pyramid-face pyramid-bottom"></div>
+        </div>
+    </div>
+
+    <div class="iso-element element-3">
+        <div class="iso-cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+    </div>
+
+    <div class="iso-element element-4">
+        <div class="iso-cylinder">
+            <div class="cylinder-top"></div>
+            <div class="cylinder-bottom"></div>
+            <div class="cylinder-side"></div>
+        </div>
+    </div>
+
+    <!-- Login Wrapper -->
+    <div class="login-wrapper">
+        <!-- Isometric Panels -->
+        <div class="iso-panel iso-panel-left">
+            <div class="panel-face front"></div>
+            <div class="panel-face left"></div>
+            <div class="panel-face right"></div>
+            <div class="panel-face top"></div>
+            <div class="panel-face bottom"></div>
+        </div>
+
+        <div class="iso-panel iso-panel-right">
+            <div class="panel-face front"></div>
+            <div class="panel-face left"></div>
+            <div class="panel-face right"></div>
+            <div class="panel-face top"></div>
+            <div class="panel-face bottom"></div>
+        </div>
+
+        <!-- Login Form Container -->
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Welcome Back</h1>
+                <p>Enter your credentials to access your account</p>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="email" id="email" class="iso-input" placeholder="Email address" required>
+                        <span class="input-icon">✉️</span>
+                        <label for="email" class="iso-label">Email</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="password" id="password" class="iso-input" placeholder="Password" required>
+                        <span class="input-icon">🔒</span>
+                        <label for="password" class="iso-label">Password</label>
+                    </div>
+                </div>
+
+                <div class="form-check">
+                    <div class="iso-checkbox-wrapper">
+                        <input type="checkbox" id="remember" class="iso-checkbox">
+                        <span class="checkbox-custom"></span>
+                    </div>
+                    <label for="remember" class="checkbox-label">Remember me</label>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <div class="iso-btn-wrapper">
+                    <button type="submit" class="iso-btn">Sign In</button>
+                    <div class="iso-btn-shadow"></div>
+                </div>
+
+                <div class="social-login">
+                    <p>Or continue with</p>
+                    <div class="social-buttons">
+                        <div class="social-btn-wrapper">
+                            <button type="button" class="social-btn google-btn">G</button>
+                            <div class="social-btn-shadow"></div>
+                        </div>
+
+                        <div class="social-btn-wrapper">
+                            <button type="button" class="social-btn facebook-btn">f</button>
+                            <div class="social-btn-shadow"></div>
+                        </div>
+
+                        <div class="social-btn-wrapper">
+                            <button type="button" class="social-btn apple-btn">a</button>
+                            <div class="social-btn-shadow"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="#">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const body = document.querySelector('body');
+            const loginWrapper = document.querySelector('.login-wrapper');
+            const isoPanelLeft = document.querySelector('.iso-panel-left');
+            const isoPanelRight = document.querySelector('.iso-panel-right');
+            const isoElements = document.querySelectorAll('.iso-element');
+
+            body.addEventListener('mousemove', function (e) {
+                const x = e.clientX / window.innerWidth - 0.5;
+                const y = e.clientY / window.innerHeight - 0.5;
+
+                isoPanelLeft.style.transform = `rotateX(${10 - y * 5}deg) rotateY(${15 + x * 5}deg) rotateZ(${-1 - x * 2}deg)`;
+                isoPanelRight.style.transform = `rotateX(${10 - y * 5}deg) rotateY(${-15 + x * 5}deg) rotateZ(${1 - x * 2}deg)`;
+
+                isoElements.forEach((element, index) => {
+                    const speed = (index + 1) * 0.1;
+                    const baseTransform = window.getComputedStyle(element).transform;
+                    element.style.transform = `${baseTransform} translateX(${x * 30 * speed}px) translateY(${y * 30 * speed}px)`;
+                });
+            });
+
+            const inputs = document.querySelectorAll('.iso-input');
+
+            inputs.forEach(input => {
+                input.addEventListener('focus', function () {
+                    this.parentElement.style.transform = 'scale(1.02)';
+                });
+
+                input.addEventListener('blur', function () {
+                    this.parentElement.style.transform = 'scale(1)';
+                });
+            });
+
+            const buttons = document.querySelectorAll('.iso-btn, .social-btn');
+
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateZ(25px) translateY(-2px)';
+                });
+
+                button.addEventListener('mouseleave', function () {
+                    if (this.classList.contains('iso-btn')) {
+                        this.style.transform = 'translateZ(15px)';
+                    } else {
+                        this.style.transform = 'translateZ(10px)';
+                    }
+                });
+
+                button.addEventListener('mousedown', function () {
+                    this.style.transform = 'translateZ(5px) translateY(2px)';
+                });
+
+                button.addEventListener('mouseup', function () {
+                    this.style.transform = 'translateZ(25px) translateY(-2px)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

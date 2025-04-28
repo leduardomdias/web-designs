@@ -76,6 +76,13 @@ Design approach focused on subtle animations and responsive feedback that create
 
 ![Micro-interactions Design Preview](/Micro-interactions%20Design/assets/preview.png)
 
+### 📦 11. Isometric Interface Design
+
+A three-dimensional visual approach that creates the illusion of depth and perspective using geometric shapes and elements arranged on a fixed isometric grid system.
+[See More](/Isometric%20Interface%20Design/)
+
+![Isometric Interface Design Preview](/Isometric%20Interface%20Design/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
