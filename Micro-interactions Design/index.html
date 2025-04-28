@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Micro-interactions Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-animation">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="logo">
+            <div class="logo-icon">M</div>
+            <div class="logo-text">Micro</div>
+        </div>
+
+        <div class="login-header">
+            <h1>Welcome back</h1>
+            <p>Enter your credentials to access your account</p>
+        </div>
+
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" class="form-input" placeholder="Enter your email">
+                    <div class="input-icon">✉️</div>
+                    <div class="success-check">✓</div>
+                    <div class="error-message">Please enter a valid email address</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password">
+                    <div class="input-icon">🔒</div>
+                    <div class="success-check">✓</div>
+                    <div class="error-message">Password must be at least 6 characters</div>
+                </div>
+            </div>
+
+            <label class="form-checkbox">
+                <input type="checkbox" class="checkbox-input">
+                <div class="checkbox-icon"></div>
+                <span class="checkbox-label">Remember me for 30 days</span>
+            </label>
+
+            <button type="submit" id="login-btn" class="btn">
+                <span class="loader"></span>
+                <span class="btn-text">Sign In</span>
+            </button>
+        </form>
+
+        <div class="social-login">
+            <div class="social-buttons">
+                <button type="button" class="social-btn">
+                    <div class="social-icon">G</div>
+                </button>
+                <button type="button" class="social-btn">
+                    <div class="social-icon">A</div>
+                </button>
+                <button type="button" class="social-btn">
+                    <div class="social-icon">F</div>
+                </button>
+            </div>
+        </div>
+
+        <div class="login-footer">
+            <p>Don't have an account? <a href="#">Create an account</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginForm = document.getElementById('login-form');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const loginBtn = document.getElementById('login-btn');
+
+            emailInput.addEventListener('blur', function () {
+                validateEmail(this);
+            });
+
+            passwordInput.addEventListener('blur', function () {
+                validatePassword(this);
+            });
+
+            function validateEmail(input) {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (input.value.trim() === '') {
+                    setError(input, 'Email is required');
+                } else if (!emailPattern.test(input.value)) {
+                    setError(input, 'Please enter a valid email address');
+                } else {
+                    setSuccess(input);
+                    return true;
+                }
+                return false;
+            }
+
+            function validatePassword(input) {
+                if (input.value.trim() === '') {
+                    setError(input, 'Password is required');
+                } else if (input.value.length < 6) {
+                    setError(input, 'Password must be at least 6 characters');
+                } else {
+                    setSuccess(input);
+                    return true;
+                }
+                return false;
+            }
+
+            function setError(input, message) {
+                input.classList.add('error');
+                input.classList.remove('valid');
+
+                const errorElement = input.parentElement.querySelector('.error-message');
+                if (errorElement) {
+                    errorElement.textContent = message;
+                }
+            }
+
+            function setSuccess(input) {
+                input.classList.remove('error');
+                input.classList.add('valid');
+            }
+
+            loginBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+
+                const ripple = document.createElement('span');
+                ripple.className = 'btn-ripple';
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+
+                this.appendChild(ripple);
+
+                const isEmailValid = validateEmail(emailInput);
+                const isPasswordValid = validatePassword(passwordInput);
+
+                if (isEmailValid && isPasswordValid) {
+                    this.classList.add('loading');
+
+                    setTimeout(() => {
+                        this.classList.remove('loading');
+                        alert('Login successful!');
+                    }, 1500);
+                } else {
+                    loginForm.classList.add('shake');
+                    setTimeout(() => {
+                        loginForm.classList.remove('shake');
+                    }, 500);
+                }
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+
+            const socialBtns = document.querySelectorAll('.social-btn');
+
+            socialBtns.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    const x = e.clientX - e.target.getBoundingClientRect().left;
+                    const y = e.clientY - e.target.getBoundingClientRect().top;
+
+                    const ripple = document.createElement('span');
+                    ripple.className = 'btn-ripple';
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

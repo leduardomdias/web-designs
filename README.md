@@ -69,6 +69,13 @@ Organic interfaces featuring amorphous shapes and flowing elements that transfor
 
 ![Liquid/Fluid Design Preview](/Liquid-Fluid%20Design/assets/preview.gif)
 
+### 🔄 10. Micro-interactions Design
+
+Design approach focused on subtle animations and responsive feedback that creates engaging, intuitive interfaces through small but meaningful interactive moments that guide users and confirm actions.
+[See More](/Micro-interactions%20Design/)
+
+![Micro-interactions Design Preview](/Micro-interactions%20Design/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
