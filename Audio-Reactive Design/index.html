@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio-Reactive Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="audio-background">
+        <canvas class="audio-waveform" id="waveformCanvas"></canvas>
+        <div class="audio-visualizer" id="audioVisualizer">
+        </div>
+    </div>
+
+    <div class="audio-feedback" id="audioFeedback"></div>
+
+    <div class="login-container">
+        <div class="audio-permission" id="audioPermission">
+            <div class="permission-icon">🎵</div>
+            <h2 class="permission-title">Enable Audio Experience</h2>
+            <p class="permission-text">Allow microphone access to experience the full audio-reactive interface</p>
+            <div class="permission-buttons">
+                <button class="btn-permission btn-allow" id="btnAllow">Enable Audio</button>
+                <button class="btn-permission btn-skip" id="btnSkip">Skip</button>
+            </div>
+        </div>
+
+        <div class="reactive-ring" id="reactiveRing"></div>
+
+        <div class="login-header">
+            <div class="sound-icon">
+                <div class="sound-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15 8C16.0608 8 17.0783 8.42143 17.8284 9.17157C18.5786 9.92172 19 10.9391 19 12C19 13.0609 18.5786 14.0783 17.8284 14.8284C17.0783 15.5786 16.0608 16 15 16"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M17.5 3.5C19.0913 3.5 20.6174 4.13214 21.7426 5.25736C22.8679 6.38258 23.5 7.9087 23.5 9.5C23.5 11.0913 22.8679 12.6174 21.7426 13.7426C20.6174 14.8679 19.0913 15.5 17.5 15.5"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M8.5 8L5.5 8C5.23478 8 4.98043 8.10536 4.79289 8.29289C4.60536 8.48043 4.5 8.73478 4.5 9L4.5 15C4.5 15.2652 4.60536 15.5196 4.79289 15.7071C4.98043 15.8946 5.23478 16 5.5 16L8.5 16C8.76522 16 9.01957 15.8946 9.20711 15.7071L13.5 11.414C13.6876 11.2265 13.793 10.9689 13.793 10.7C13.793 10.4311 13.6876 10.1735 13.5 9.986L9.20711 5.70711C9.01957 5.51957 8.76522 5.41421 8.5 5.41421C8.23478 5.41421 7.98043 5.51957 7.79289 5.70711C7.60536 5.89464 7.5 6.14899 7.5 6.41421L7.5 8Z"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="sound-wave wave1"></div>
+                <div class="sound-wave wave2"></div>
+                <div class="sound-wave wave3"></div>
+            </div>
+            <h1 class="login-title">Sound Login</h1>
+            <p class="login-subtitle">Sign in with audio-reactive experience</p>
+        </div>
+
+        <form class="login-form" id="loginForm">
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                    <div class="input-highlight"></div>
+                    <div class="audio-level-indicator">
+                        <div class="level-bar"></div>
+                        <div class="level-bar"></div>
+                        <div class="level-bar"></div>
+                        <div class="level-bar"></div>
+                        <div class="level-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+                    <div class="input-highlight"></div>
+                    <div class="audio-level-indicator">
+                        <div class="level-bar"></div>
+                        <div class="level-bar"></div>
+                        <div class="level-bar"></div>
+                        <div class="level-bar"></div>
+                        <div class="level-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" id="remember" class="form-check-input">
+                <label for="remember" class="form-check-label">Remember me</label>
+            </div>
+
+            <div class="btn-wrapper">
+                <button type="submit" class="form-btn">Sign In</button>
+                <div class="btn-audio-waves">
+                    <div class="btn-wave wave-1"></div>
+                    <div class="btn-wave wave-2"></div>
+                </div>
+            </div>
+
+            <div class="divider">or continue with</div>
+
+            <div class="social-login">
+                <button type="button" class="social-btn">
+                    <span>Google</span>
+                    <div class="social-btn-ripple"></div>
+                </button>
+                <button type="button" class="social-btn">
+                    <span>Apple</span>
+                    <div class="social-btn-ripple"></div>
+                </button>
+                <button type="button" class="social-btn">
+                    <span>Facebook</span>
+                    <div class="social-btn-ripple"></div>
+                </button>
+            </div>
+
+            <div class="signup-link">
+                Don't have an account? <a href="#">Sign up</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const audioVisualizer = document.getElementById('audioVisualizer');
+            const audioFeedback = document.getElementById('audioFeedback');
+            const reactiveRing = document.getElementById('reactiveRing');
+            const audioPermission = document.getElementById('audioPermission');
+            const btnAllow = document.getElementById('btnAllow');
+            const btnSkip = document.getElementById('btnSkip');
+            const waveformCanvas = document.getElementById('waveformCanvas');
+            const waveformCtx = waveformCanvas.getContext('2d');
+
+            const barsCount = 64;
+            for (let i = 0; i < barsCount; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'audio-bar';
+                audioVisualizer.appendChild(bar);
+            }
+
+            let audioContext, analyser, microphone, dataArray, bars, levelIndicators;
+            let audioEnabled = false;
+            let animationFrameId;
+
+            function resizeCanvas() {
+                waveformCanvas.width = window.innerWidth;
+                waveformCanvas.height = 150;
+            }
+
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            function initFakeVisualization() {
+                audioPermission.classList.add('permission-hidden');
+
+                bars = document.querySelectorAll('.audio-bar');
+                levelIndicators = document.querySelectorAll('.audio-level-indicator');
+
+                animateFakeAudio();
+            }
+
+            function initAudioVisualization() {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioContext.createAnalyser();
+                analyser.fftSize = 256;
+
+                navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+                    .then(stream => {
+                        audioPermission.classList.add('permission-hidden');
+                        audioEnabled = true;
+
+                        microphone = audioContext.createMediaStreamSource(stream);
+                        microphone.connect(analyser);
+
+                        const bufferLength = analyser.frequencyBinCount;
+                        dataArray = new Uint8Array(bufferLength);
+
+                        bars = document.querySelectorAll('.audio-bar');
+                        levelIndicators = document.querySelectorAll('.audio-level-indicator');
+
+                        visualizeAudio();
+                    })
+                    .catch(err => {
+                        console.log('Error accessing microphone:', err);
+                        initFakeVisualization();
+                    });
+            }
+
+            function animateFakeAudio() {
+                const fakeDataArray = [];
+                for (let i = 0; i < bars.length; i++) {
+                    const value = 30 + 20 * Math.sin(Date.now() * 0.001 + i * 0.2) + Math.random() * 10;
+                    fakeDataArray.push(value);
+                }
+
+                for (let i = 0; i < bars.length; i++) {
+                    const value = fakeDataArray[i];
+                    const height = value + '%';
+                    bars[i].style.height = height;
+                }
+
+                waveformCtx.clearRect(0, 0, waveformCanvas.width, waveformCanvas.height);
+                waveformCtx.beginPath();
+                waveformCtx.moveTo(0, waveformCanvas.height / 2);
+
+                for (let i = 0; i < waveformCanvas.width; i++) {
+                    const x = i;
+                    const y = waveformCanvas.height / 2 + Math.sin(i * 0.03 + Date.now() * 0.001) * 30;
+                    waveformCtx.lineTo(x, y);
+                }
+
+                waveformCtx.strokeStyle = 'rgba(138, 43, 226, 0.5)';
+                waveformCtx.lineWidth = 2;
+                waveformCtx.stroke();
+
+                document.querySelectorAll('.form-input').forEach((input, idx) => {
+                    if (document.activeElement === input) {
+                        const bars = levelIndicators[idx].querySelectorAll('.level-bar');
+                        bars.forEach((bar, i) => {
+                            const randomHeight = (30 + Math.random() * 70) + '%';
+                            bar.style.height = randomHeight;
+                        });
+                    }
+                });
+
+                animationFrameId = requestAnimationFrame(animateFakeAudio);
+            }
+
+            function visualizeAudio() {
+                analyser.getByteFrequencyData(dataArray);
+
+                let sum = 0;
+                for (let i = 0; i < dataArray.length; i++) {
+                    sum += dataArray[i];
+                }
+                const average = sum / dataArray.length;
+
+                for (let i = 0; i < bars.length; i++) {
+                    const index = Math.floor(i * (dataArray.length / bars.length));
+                    const value = dataArray[index];
+                    const height = value + '%';
+                    bars[i].style.height = height;
+                }
+
+                const scaleFactor = 1 + (average / 512);
+                reactiveRing.style.transform = `scale(${scaleFactor})`;
+                reactiveRing.style.filter = `brightness(${0.8 + (average / 255)})`;
+
+                waveformCtx.clearRect(0, 0, waveformCanvas.width, waveformCanvas.height);
+                waveformCtx.beginPath();
+
+                const sliceWidth = waveformCanvas.width / dataArray.length;
+                let x = 0;
+
+                for (let i = 0; i < dataArray.length; i++) {
+                    const v = dataArray[i] / 128.0;
+                    const y = v * waveformCanvas.height / 2;
+
+                    if (i === 0) {
+                        waveformCtx.moveTo(x, y);
+                    } else {
+                        waveformCtx.lineTo(x, y);
+                    }
+
+                    x += sliceWidth;
+                }
+
+                waveformCtx.lineTo(waveformCanvas.width, waveformCanvas.height / 2);
+                waveformCtx.strokeStyle = 'rgba(138, 43, 226, 0.5)';
+                waveformCtx.lineWidth = 2;
+                waveformCtx.stroke();
+
+                document.querySelectorAll('.form-input').forEach((input, idx) => {
+                    if (document.activeElement === input) {
+                        const bars = levelIndicators[idx].querySelectorAll('.level-bar');
+                        bars.forEach((bar, i) => {
+                            const freqIndex = Math.floor((i / bars.length) * dataArray.length);
+                            const height = (30 + (dataArray[freqIndex] / 255) * 70) + '%';
+                            bar.style.height = height;
+                        });
+                    }
+                });
+
+                animationFrameId = requestAnimationFrame(visualizeAudio);
+            }
+
+            btnAllow.addEventListener('click', initAudioVisualization);
+            btnSkip.addEventListener('click', initFakeVisualization);
+
+            const form = document.getElementById('loginForm');
+            const inputs = document.querySelectorAll('.form-input');
+            const socialBtns = document.querySelectorAll('.social-btn');
+
+            inputs.forEach((input, idx) => {
+                input.addEventListener('focus', () => {
+                    const levelBars = levelIndicators[idx].querySelectorAll('.level-bar');
+                    levelBars.forEach(bar => {
+                        bar.style.backgroundColor = 'var(--primary-light)';
+                        bar.style.height = '50%';
+                    });
+
+                    audioFeedback.classList.add('active');
+                    setTimeout(() => {
+                        audioFeedback.classList.remove('active');
+                    }, 300);
+                });
+
+                input.addEventListener('blur', () => {
+                    const levelBars = levelIndicators[idx].querySelectorAll('.level-bar');
+                    levelBars.forEach(bar => {
+                        bar.style.backgroundColor = 'var(--primary-light)';
+                        bar.style.height = '30%';
+                    });
+                });
+
+                input.addEventListener('keydown', () => {
+                    if (audioEnabled) {
+                        audioFeedback.style.opacity = '0.2';
+                        audioFeedback.style.transform = 'translate(-50%, -50%) scale(1.05)';
+
+                        setTimeout(() => {
+                            audioFeedback.style.opacity = '0';
+                            audioFeedback.style.transform = 'translate(-50%, -50%) scale(1)';
+                        }, 100);
+                    }
+                });
+            });
+
+            socialBtns.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    const ripple = this.querySelector('.social-btn-ripple');
+                    ripple.style.left = (e.offsetX) + 'px';
+                    ripple.style.top = (e.offsetY) + 'px';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.opacity = '1';
+
+                    setTimeout(() => {
+                        ripple.style.transform = 'scale(3)';
+                        ripple.style.opacity = '0';
+                    }, 0);
+
+                    if (audioEnabled) {
+                        audioFeedback.classList.add('active');
+                        setTimeout(() => {
+                            audioFeedback.classList.remove('active');
+                        }, 300);
+                    }
+                });
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                audioFeedback.style.opacity = '0.5';
+                audioFeedback.style.transform = 'translate(-50%, -50%) scale(1.2)';
+
+                setTimeout(() => {
+                    audioFeedback.style.opacity = '0';
+                    audioFeedback.style.transform = 'translate(-50%, -50%) scale(1)';
+                    alert('Login successful!');
+                }, 500);
+            });
+
+            window.addEventListener('beforeunload', () => {
+                if (audioContext) {
+                    audioContext.close();
+                }
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

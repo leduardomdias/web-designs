@@ -90,6 +90,13 @@ Nostalgic interface design that emulates text-based computer terminals, featurin
 
 ![Terminal/Command Line Aesthetic Preview](/Terminal%20-%20Command%20Line%20Aesthetic/assets/preview.gif)
 
+### 🎵 13. Audio-Reactive Design
+
+A dynamic interface approach that responds to sound input, creating visual feedback and interactions that synchronize with audio, producing an immersive multi-sensory experience.
+[See More](/Audio-Reactive%20Design/)
+
+![Audio-Reactive Design Preview](/Audio-Reactive%20Design/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
