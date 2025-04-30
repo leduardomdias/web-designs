@@ -97,6 +97,13 @@ A dynamic interface approach that responds to sound input, creating visual feedb
 
 ![Audio-Reactive Design Preview](/Audio-Reactive%20Design/assets/preview.png)
 
+### 🌙 14. Dark Mode Exclusive
+
+A design approach that prioritizes dark color schemes as the primary experience, featuring optimized contrast, reduced eye strain, and carefully crafted UI elements specifically designed for low-light environments.
+[See More](/Dark%20Mode%20Exclusive/)
+
+![Dark Mode Exclusive Preview](/Dark%20Mode%20Exclusive/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
