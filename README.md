@@ -104,6 +104,13 @@ A design approach that prioritizes dark color schemes as the primary experience,
 
 ![Dark Mode Exclusive Preview](/Dark%20Mode%20Exclusive/assets/preview.png)
 
+### 🌓 15. Dynamic Theme Switching
+
+A responsive login interface featuring smooth transitioning between light and dark modes with a circular animation effect, adapting to user preferences while maintaining visual consistency and accessibility.
+[See More](/Dynamic%20Theme%20Switching/)
+
+![Dynamic Theme Switching Preview](/Dynamic%20Theme%20Switching/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
