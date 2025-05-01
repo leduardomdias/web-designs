@@ -119,6 +119,13 @@ A bold, raw, and deliberately unpolished login interface inspired by brutalist a
 
 ![Neo-Brutalist Preview](/Neo-Brutalist/assets/preview.png)
 
+### 🎨 17. Memphis Design Revival
+
+A vibrant, playful login interface inspired by the iconic 1980s Memphis Design movement, featuring bold geometric shapes, contrasting colors, and decorative patterns that create a distinctively energetic and visually engaging user experience.
+[See More](/Memphis%20Design%20Revival/)
+
+![Memphis Design Revival Preview](/Memphis%20Design%20Revival/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:

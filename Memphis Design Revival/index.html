@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memphis Design Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=VT323&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="memphis-bg">
+        <div class="shape circle circle-1"></div>
+        <div class="shape circle circle-2"></div>
+        <div class="shape triangle"></div>
+        <div class="shape zigzag"></div>
+        <div class="shape dots-pattern"></div>
+        <div class="shape rectangle"></div>
+    </div>
+
+    <div class="container">
+        <div class="login-wrapper">
+            <div class="login-decorator-1"></div>
+            <div class="login-decorator-2"></div>
+            <div class="login-decorator-3"></div>
+
+            <div class="login-card">
+                <div class="card-pattern"></div>
+
+                <div class="login-header">
+                    <h1 class="login-title">Welcome!</h1>
+                    <p class="login-subtitle">Sign in to continue the journey</p>
+                </div>
+
+                <form class="login-form">
+                    <div class="form-group">
+                        <span class="input-icon">✉️</span>
+                        <input type="email" class="form-input" id="email" placeholder=" ">
+                        <label for="email" class="form-label">Email address</label>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="input-icon">🔒</span>
+                        <input type="password" class="form-input" id="password" placeholder=" ">
+                        <label for="password" class="form-label">Password</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label for="rememberMe" class="form-check-label">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="btn-login">Sign In</button>
+                </form>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <span class="divider-text">or</span>
+                    <div class="divider-line"></div>
+                </div>
+
+                <div class="social-buttons">
+                    <button type="button" class="social-btn google">G</button>
+                    <button type="button" class="social-btn apple">A</button>
+                    <button type="button" class="social-btn facebook">f</button>
+                </div>
+
+                <p class="bottom-text">
+                    Don't have an account? <a href="#" class="signup-link">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginForm = document.querySelector('.login-form');
+
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                if (email && password) {
+                    alert('Login successful!');
+                }
+            });
+
+            const loginBtn = document.querySelector('.btn-login');
+
+            loginBtn.addEventListener('mousedown', function () {
+                this.style.transform = 'scale(0.98)';
+            });
+
+            loginBtn.addEventListener('mouseup', function () {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+
+</html>
