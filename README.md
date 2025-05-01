@@ -110,6 +110,14 @@ A responsive login interface featuring smooth transitioning between light and da
 [See More](/Dynamic%20Theme%20Switching/)
 
 ![Dynamic Theme Switching Preview](/Dynamic%20Theme%20Switching/assets/preview.png)
+![Dynamic Theme Switching Preview](/Dynamic%20Theme%20Switching/assets/preview2.png)
+
+### 🧱 16. Neo-Brutalist Design
+
+A bold, raw, and deliberately unpolished login interface inspired by brutalist architecture and anti-design principles, featuring exaggerated shadows, stark borders, and playfully distorted interactive elements.
+[See More](/Neo-Brutalist/)
+
+![Neo-Brutalist Preview](/Neo-Brutalist/assets/preview.png)
 
 ## 📋 How to Use
 

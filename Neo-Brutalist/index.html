@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo-Brutalist Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="brutalist-element circle"></div>
+    <div class="brutalist-element square"></div>
+    <div class="brutalist-element zigzag"></div>
+
+    <nav class="nav">
+        <a href="#" class="logo">BRUTAL</a>
+        <ul class="nav-links">
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">WORK</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="login-container">
+            <div class="login-header">
+                <h1 class="login-title">SIGN <span>IN.</span></h1>
+                <p class="login-subtitle">Raw, unfiltered access to your digital concrete jungle.</p>
+            </div>
+
+            <div class="login-card">
+                <div class="login-card-header">
+                    <div class="card-title">Login</div>
+                    <div class="card-icon">👤</div>
+                </div>
+
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="email" class="form-label">USERNAME/EMAIL</label>
+                        <input type="email" id="email" class="form-input" placeholder="you@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">PASSWORD</label>
+                        <input type="password" id="password" class="form-input" placeholder="••••••••••••">
+                        <button type="button" class="password-toggle">👁️</button>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" id="remember" class="form-check-input">
+                        <label for="remember" class="form-check-label">Keep me signed in</label>
+                    </div>
+
+                    <button type="submit" class="login-button">Log In</button>
+                </form>
+            </div>
+
+            <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-text">Or Connect With</div>
+                <div class="divider-line"></div>
+            </div>
+
+            <div class="social-buttons">
+                <button class="social-button google">G</button>
+                <button class="social-button twitter">T</button>
+                <button class="social-button github">GH</button>
+            </div>
+
+            <p class="bottom-text">
+                Don't have an account? <a href="#" class="signup-link">SIGN UP</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="doodle">
+        <div class="arrow"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordToggle = document.querySelector('.password-toggle');
+            const passwordInput = document.getElementById('password');
+
+            passwordToggle.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.textContent = type === 'password' ? '👁️' : '🔒';
+            });
+
+            const loginForm = document.querySelector('.login-form');
+            const loginCard = document.querySelector('.login-card');
+
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                loginCard.style.transition = 'transform 0.3s, opacity 0.3s';
+                loginCard.style.transform = 'translateX(10px) rotate(2deg)';
+
+                setTimeout(() => {
+                    loginCard.style.transform = 'translateX(-10px) rotate(-2deg)';
+
+                    setTimeout(() => {
+                        loginCard.style.transform = 'translateX(0) rotate(0)';
+
+                        console.log('Form submitted!');
+                    }, 300);
+                }, 300);
+            });
+
+            const formInputs = document.querySelectorAll('.form-input');
+
+            formInputs.forEach(input => {
+                input.addEventListener('focus', function () {
+                    this.style.backgroundColor = '#ffffff';
+                });
+
+                input.addEventListener('blur', function () {
+                    this.style.backgroundColor = 'var(--color-bg)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
