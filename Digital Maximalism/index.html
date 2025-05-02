@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Maximalism Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee+Shade&family=Major+Mono+Display&family=Monoton&family=Permanent+Marker&family=Righteous&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-layers">
+        <div class="bg-layer layer-1"></div>
+        <div class="bg-layer layer-2"></div>
+        <div class="bg-layer layer-3"></div>
+        <div class="bg-layer layer-4"></div>
+        <div class="bg-layer layer-grain"></div>
+    </div>
+
+    <div class="floating-elements">
+        <div class="float float-1"></div>
+        <div class="float float-2"></div>
+        <div class="float float-3"></div>
+        <div class="float float-4"></div>
+        <div class="float float-5"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <a href="#" class="logo">MAXX</a>
+            <ul class="nav-links">
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </header>
+
+        <div class="login-container">
+            <div class="info-column">
+                <div class="info-pattern"></div>
+                <h1 class="info-title">DIGITAL MAXIMALISM</h1>
+                <h2 class="info-subtitle">More is More.</h2>
+                <p class="info-text">
+                    Welcome to the anti-minimalist revolution where content is king, visuals are bold, and interfaces
+                    are rich with information and visual stimuli. We reject the boring constraints of minimalism for a
+                    more colorful, expressive digital experience.
+                </p>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        Multi-layered visual experience
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        Rich media and information density
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        Bold typography and vibrant colors
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        Interactive complexity with depth
+                    </li>
+                </ul>
+                <div class="social-proof">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-quote">"Finally, a digital experience that doesn't feel empty and boring. This is
+                        what the web should be - vibrant, rich, and full of personality!"</p>
+                    <p class="review-author">- Digital Design Magazine</p>
+                </div>
+                <div class="corner-decoration corner-top-left"></div>
+                <div class="corner-decoration corner-top-right"></div>
+                <div class="corner-decoration corner-bottom-left"></div>
+                <div class="corner-decoration corner-bottom-right"></div>
+            </div>
+
+            <div class="form-column">
+                <div class="form-border"></div>
+                <div class="form-card-header">
+                    <div class="form-icon">👁️</div>
+                    <h2 class="form-title">sign_in()</h2>
+                    <p class="form-subtitle">ENTER THE MAXIMALIST EXPERIENCE</p>
+                </div>
+
+                <form class="login-form">
+                    <div class="form-group">
+                        <input type="email" class="form-input" id="email" placeholder=" ">
+                        <label for="email" class="form-label">EMAIL ADDRESS</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-input" id="password" placeholder=" ">
+                        <label for="password" class="form-label">PASSWORD</label>
+                        <button type="button" class="password-toggle">👁️</button>
+                    </div>
+
+                    <div class="form-options">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="remember">
+                            <label for="remember" class="form-check-label">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-login">ENTER SYSTEM</button>
+                </form>
+
+                <div class="divider">
+                    <span class="divider-text">or continue with</span>
+                </div>
+
+                <div class="social-buttons">
+                    <button type="button" class="social-btn google">G</button>
+                    <button type="button" class="social-btn apple">A</button>
+                    <button type="button" class="social-btn twitter">T</button>
+                </div>
+
+                <div class="register-link">
+                    Don't have an account? <a href="#" class="register-cta">Create one now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="easter-egg">✧</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordToggle = document.querySelector('.password-toggle');
+            const passwordInput = document.getElementById('password');
+
+            passwordToggle.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.textContent = type === 'password' ? '👁️' : '🔒';
+            });
+
+            const easterEgg = document.querySelector('.easter-egg');
+            easterEgg.addEventListener('click', function () {
+                document.body.style.animation = 'float-animation 5s infinite linear';
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                }, 5000);
+            });
+
+            const loginForm = document.querySelector('.login-form');
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                if (email && password) {
+                    const loginButton = this.querySelector('.btn-login');
+                    loginButton.textContent = 'ACCESSING...';
+
+                    setTimeout(() => {
+                        loginButton.textContent = 'ACCESS GRANTED';
+                    }, 1500);
+                }
+            });
+
+            const loginContainer = document.querySelector('.login-container');
+            document.addEventListener('mousemove', function (e) {
+                const x = e.clientX / window.innerWidth - 0.5;
+                const y = e.clientY / window.innerHeight - 0.5;
+
+                loginContainer.style.boxShadow =
+                    `${x * 30}px ${y * 30}px 50px rgba(255, 0, 255, 0.15), 
+                    ${-x * 30}px ${-y * 30}px 50px rgba(0, 255, 255, 0.15)`;
+            });
+        });
+    </script>
+</body>
+
+</html>

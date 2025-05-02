@@ -126,6 +126,13 @@ A vibrant, playful login interface inspired by the iconic 1980s Memphis Design m
 
 ![Memphis Design Revival Preview](/Memphis%20Design%20Revival/assets/preview.png)
 
+### ✨ 18. Digital Maximalism
+
+A visually abundant login interface that rejects minimalist constraints in favor of rich layers, vibrant colors, and complex visual elements, creating an immersive digital experience that celebrates information density and sensory stimulation.
+[See More](/Digital%20Maximalism/)
+
+![Digital Maximalism Preview](/Digital%20Maximalism/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
