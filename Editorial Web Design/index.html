@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="#" class="site-logo">Chronicle<span></span></a>
+        <nav class="header-nav">
+            <a href="#" class="nav-link">Features</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="login-container">
+            <div class="editorial-panel">
+                <div class="editorial-pattern"></div>
+                <h1 class="login-heading">Welcome to the Chronicle Experience</h1>
+                <p class="login-intro">Access your personalized reading list, bookmarks, and continue your journey
+                    through our carefully curated content.</p>
+
+                <blockquote class="quote-block">
+                    <p class="quote-text">"The art of reading is in great part the art of finding what you expect in
+                        what you are reading."</p>
+                    <cite class="quote-author">— Wallace Stevens</cite>
+                </blockquote>
+
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Personalized reading experience based on your interests</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Curated content from award-winning journalists</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Bookmark articles to read later across any device</span>
+                    </li>
+                </ul>
+
+                <div class="metadata">
+                    <div class="metadata-item">
+                        <span class="metadata-icon">📚</span>
+                        <span>Over 10,000 articles</span>
+                    </div>
+                    <div class="metadata-item">
+                        <span class="metadata-icon">👥</span>
+                        <span>Join 500k+ readers</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-panel">
+                <h2 class="form-title">Sign In</h2>
+
+                <div class="social-login">
+                    <button class="btn btn-social">
+                        <span class="btn-icon">G</span>
+                        <span>Google</span>
+                    </button>
+                    <button class="btn btn-social">
+                        <span class="btn-icon">f</span>
+                        <span>Facebook</span>
+                    </button>
+                </div>
+
+                <div class="form-divider">
+                    <div class="divider-line"></div>
+                    <span class="divider-text">or with email</span>
+                    <div class="divider-line"></div>
+                </div>
+
+                <form>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="••••••••">
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                </form>
+
+                <p class="register-prompt">
+                    Don't have an account? <a href="#" class="register-link">Create one</a>
+                </p>
+
+                <div class="form-footnote">
+                    By signing in, you agree to our <a href="#" class="footnote-link">Terms of Service</a> and <a
+                        href="#" class="footnote-link">Privacy Policy</a>.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div>© 2025 Chronicle. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Privacy</a>
+            <a href="#" class="footer-link">Terms</a>
+            <a href="#" class="footer-link">Help</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                if (email && password) {
+                    const btn = document.querySelector('.btn-primary');
+                    btn.textContent = 'Signing in...';
+
+                    setTimeout(() => {
+                        btn.textContent = 'Success!';
+                    }, 1500);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

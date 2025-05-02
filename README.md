@@ -140,6 +140,13 @@ A fluid, organic login interface inspired by natural forms and cellular structur
 
 ![Biomorphic Design Preview](/Biomorphic%20Design/assets/preview.png)
 
+### 📰 20. Editorial Web Design
+
+A sophisticated login interface inspired by print editorial layouts, featuring refined typography, balanced column structure, and thoughtful content presentation that creates a premium, content-focused user experience reminiscent of high-quality magazines and newspapers.
+[See More](/Editorial%20Web%20Design/)
+
+![Editorial Web Design Preview](/Editorial%20Web%20Design/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
