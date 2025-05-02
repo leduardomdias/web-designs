@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomorphic Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bio-backgrounds">
+        <div class="bio-shape bio-shape-1"></div>
+        <div class="bio-shape bio-shape-2"></div>
+        <div class="bio-shape bio-shape-3"></div>
+        <div class="bio-pattern"></div>
+    </div>
+
+    <div class="container">
+        <div class="login-container">
+            <div class="bio-accent accent-1"></div>
+            <div class="bio-accent accent-2"></div>
+
+            <div class="login-image">
+                <div class="image-content">
+                    <div class="bio-icon">🌿</div>
+                    <h2>Welcome Back</h2>
+                    <p>Connect with the digital ecosystem and access your personal space with natural flow.</p>
+                </div>
+            </div>
+
+            <div class="login-form-container">
+                <div class="login-header">
+                    <h1 class="login-title">Sign In</h1>
+                    <p class="login-subtitle">Access your account to continue your journey</p>
+                </div>
+
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="••••••••">
+                        <button type="button" class="password-toggle">👁️</button>
+                    </div>
+
+                    <div class="form-options">
+                        <div class="form-check">
+                            <input type="checkbox" id="remember" class="form-check-input">
+                            <span class="checkmark"></span>
+                            <label for="remember" class="form-check-label">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-login">Sign In</button>
+                </form>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <span class="divider-text">or continue with</span>
+                    <div class="divider-line"></div>
+                </div>
+
+                <div class="social-login">
+                    <button type="button" class="social-btn">G</button>
+                    <button type="button" class="social-btn">f</button>
+                    <button type="button" class="social-btn">in</button>
+                </div>
+
+                <div class="register-link">
+                    Don't have an account? <a href="#">Create account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordToggle = document.querySelector('.password-toggle');
+            const passwordField = document.getElementById('password');
+
+            passwordToggle.addEventListener('click', function () {
+                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordField.setAttribute('type', type);
+                this.textContent = type === 'password' ? '👁️' : '🔒';
+            });
+
+            const loginForm = document.querySelector('.login-form');
+
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                if (email && password) {
+                    const loginBtn = document.querySelector('.btn-login');
+                    loginBtn.textContent = 'Signing In...';
+
+                    setTimeout(() => {
+                        loginBtn.textContent = 'Success!';
+                    }, 1500);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

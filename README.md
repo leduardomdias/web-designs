@@ -133,6 +133,13 @@ A visually abundant login interface that rejects minimalist constraints in favor
 
 ![Digital Maximalism Preview](/Digital%20Maximalism/assets/preview.png)
 
+### 🌿 19. Biomorphic Design
+
+A fluid, organic login interface inspired by natural forms and cellular structures, featuring soft morphing shapes, nature-inspired colors, and gentle animations that create a calm, harmonious user experience reminiscent of biological systems.
+[See More](/Biomorphic%20Design/)
+
+![Biomorphic Design Preview](/Biomorphic%20Design/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
