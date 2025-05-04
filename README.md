@@ -147,6 +147,13 @@ A sophisticated login interface inspired by print editorial layouts, featuring r
 
 ![Editorial Web Design Preview](/Editorial%20Web%20Design/assets/preview.png)
 
+### 📼 21. Analog Glitch Aesthetic
+
+A distorted login interface inspired by analog technology errors, VHS artifacts, and digital decay, featuring scan lines, chromatic aberration, and glitchy animations that create an unsettling yet nostalgic experience reminiscent of corrupted video playback and malfunctioning electronics.
+[See More](/Analog%20Glitch%20Aesthetic/)
+
+![Analog Glitch Aesthetic Preview](/Analog%20Glitch%20Aesthetic/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:

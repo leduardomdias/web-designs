@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Glitch Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=IBM+Plex+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="tracking-error"></div>
+
+    <div class="container">
+        <div class="tv-screen">
+            <div class="tv-button"></div>
+
+            <div class="login-header">
+                <h1 class="login-title">System Access</h1>
+                <p class="subtitle">Enter credentials to connect</p>
+            </div>
+
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <div class="glitch-input">
+                        <input type="text" id="username" class="form-input" placeholder="Enter username">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="glitch-input">
+                        <input type="password" id="password" class="form-input" placeholder="Enter password">
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" id="remember" class="form-check-input">
+                        <label for="remember" class="form-check-label">Remember terminal</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="form-button glitch-button">Login</button>
+
+                <div class="form-divider">
+                    <div class="divider-line"></div>
+                    <span class="divider-text">OR</span>
+                    <div class="divider-line"></div>
+                </div>
+
+                <div class="social-login">
+                    <button type="button" class="social-btn">G</button>
+                    <button type="button" class="social-btn">f</button>
+                    <button type="button" class="social-btn">in</button>
+                </div>
+
+                <div class="no-account">
+                    No access credentials? <a href="#" class="register-link">Request access</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function randomTrackingError() {
+                const trackingElement = document.querySelector('.tracking-error');
+
+                setTimeout(() => {
+                    trackingElement.classList.add('active');
+
+                    setTimeout(() => {
+                        trackingElement.classList.remove('active');
+                        randomTrackingError();
+                    }, 500);
+                }, randomTime);
+            }
+
+            randomTrackingError();
+
+            const inputs = document.querySelectorAll('.form-input');
+
+            inputs.forEach(input => {
+                input.addEventListener('focus', function () {
+                    const parent = this.parentElement;
+                    parent.style.setProperty('--glitch-blur', '2px');
+
+                    setTimeout(() => {
+                        parent.style.setProperty('--glitch-blur', '1px');
+                    }, 300);
+                });
+            });
+
+            const form = document.querySelector('.login-form');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const button = this.querySelector('.form-button');
+                button.textContent = 'Accessing...';
+
+                const trackingElement = document.querySelector('.tracking-error');
+                trackingElement.classList.add('active');
+
+                setTimeout(() => {
+                    trackingElement.classList.remove('active');
+
+                    setTimeout(() => {
+                        trackingElement.classList.add('active');
+
+                        setTimeout(() => {
+                            trackingElement.classList.remove('active');
+                            button.textContent = 'Connected';
+                        }, 500);
+                    }, 300);
+                }, 500);
+            });
+
+            const tvButton = document.querySelector('.tv-button');
+
+            tvButton.addEventListener('click', function () {
+                document.body.style.opacity = '0';
+
+                setTimeout(() => {
+                    document.body.style.opacity = '1';
+                }, 500);
+            });
+        });
+    </script>
+</body>
+
+</html>
