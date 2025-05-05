@@ -154,6 +154,13 @@ A distorted login interface inspired by analog technology errors, VHS artifacts,
 
 ![Analog Glitch Aesthetic Preview](/Analog%20Glitch%20Aesthetic/assets/preview.png)
 
+### ✨ 22. Glass Morphism 2.0
+
+A modern login interface inspired by advanced glass material properties, featuring layered transparency, dynamic light reflections, and subtle animations that create an elegant, dimensional user experience reminiscent of frosted glass with depth and physicality.
+[See More](/Glass%20Morphism%202.0/)
+
+![Glass Morphism 2.0 Preview](/Glass%20Morphism%202.0/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
