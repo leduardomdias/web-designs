@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avant-garde Typography Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,500;9..40,700;9..40,900&family=Playfair+Display:ital,wght@0,400;0,800;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="typo-decor typo-decor-1">TYPE</div>
+        <div class="typo-decor typo-decor-2">FORM</div>
+        <div class="typo-decor typo-decor-3">avant</div>
+
+        <div class="container">
+            <div class="typography-panel">
+                <div class="header-stack">
+                    <div class="brand">Avant Type</div>
+                    <h1 class="headline-large">TYPOGRAPHIC
+                        <span class="headline-accent">Rebellion</span>
+                    </h1>
+                    <p class="tagline">Breaking the rules of conventional design through experimental typography and
+                        visual hierarchy</p>
+                </div>
+
+                <div class="experimental-type">
+                    <span class="experimental-position">compose</span>
+
+                    <div class="type-row">
+                        <div class="type-element vertical-type">
+                            VERTICAL TEXT
+                        </div>
+                        <div class="type-element inverted-type">
+                            INVERSE
+                        </div>
+                    </div>
+
+                    <div class="type-row">
+                        <div class="type-element scattered-letters">
+                            <span>S</span>
+                            <span>P</span>
+                            <span>A</span>
+                            <span>C</span>
+                            <span>E</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-nav">
+                    <div class="type-nav-item active">Manifesto</div>
+                    <div class="type-nav-item">Gallery</div>
+                    <div class="type-nav-item">Experiments</div>
+                    <div class="type-nav-item">Archive</div>
+                </div>
+            </div>
+
+            <div class="login-panel">
+                <div class="login-container">
+                    <div class="login-header">
+                        <span class="avant-marker">Member Access</span>
+                        <h2 class="login-title">Sign In</h2>
+                        <p class="login-subtitle">Enter your credentials to access the typography revolution</p>
+                    </div>
+
+                    <form class="login-form">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <label class="input-label" for="email">EMAIL</label>
+                                <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <label class="input-label" for="password">PASSWORD</label>
+                                <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <div class="form-check">
+                                <input type="checkbox" id="remember" class="form-check-input">
+                                <label for="remember" class="form-check-label">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn-login">Login</button>
+                    </form>
+
+                    <div class="login-footnote">
+                        <div>
+                            <div class="footnote-divider"></div>
+                            <p>New to Avant Type? <br>Create an account</p>
+                        </div>
+                        <div>
+                            <div class="footnote-divider"></div>
+                            <p>Issue № 24<br>Typography Manifesto</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scatteredLetters = document.querySelectorAll('.scattered-letters span');
+            setInterval(() => {
+                scatteredLetters.forEach(letter => {
+                    const randomY = Math.random() * 15 - 7.5;
+                    const randomRotate = Math.random() * 10 - 5;
+                    letter.style.transition = 'transform 2s ease';
+                    letter.style.transform = `translateY(${randomY}px) rotate(${randomRotate}deg)`;
+                });
+            }, 3000);
+
+            const navItems = document.querySelectorAll('.type-nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    navItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

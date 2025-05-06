@@ -161,6 +161,13 @@ A modern login interface inspired by advanced glass material properties, featuri
 
 ![Glass Morphism 2.0 Preview](/Glass%20Morphism%202.0/assets/preview.png)
 
+### 📝 23. Avant-garde Typography
+
+A bold login interface inspired by experimental typography and editorial design, featuring oversized text, unconventional layouts, and dramatic juxtapositions that create a visually striking experience reminiscent of avant-garde art movements and modern design manifestos.
+[See More](/Avant-garde%20Typography/)
+
+![Avant-garde Typography Preview](/Avant-garde%20Typography/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
