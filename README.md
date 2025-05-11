@@ -168,6 +168,13 @@ A bold login interface inspired by experimental typography and editorial design,
 
 ![Avant-garde Typography Preview](/Avant-garde%20Typography/assets/preview.png)
 
+### 🧱 24. Low-Fi Web Brutalism
+
+A deliberately unpolished login interface embracing raw HTML aesthetics, visible structural elements, and nostalgic web references that create an anti-design experience reminiscent of early internet pages and brutalist architecture's honest approach to materials.
+[See More](/Low-Fi%20Web%20Brutalism/)
+
+![Low-Fi Web Brutalism Preview](/Low-Fi%20Web%20Brutalism/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:

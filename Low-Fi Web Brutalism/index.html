@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Low-Fi Web Brutalism Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="header-title">BRUT-LOGIN.SYS</div>
+            <div class="time" id="current-time">12:00:00</div>
+        </header>
+
+        <nav class="sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="#" class="active">LOGIN</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">GUESTBOOK</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">???????</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="brutalist-decor decor-square"></div>
+            <div class="brutalist-decor decor-circle"></div>
+            <div class="brutalist-decor decor-triangle"></div>
+
+            <div class="login-box">
+                <div class="login-header">
+                    <span>USER ACCESS</span>
+                    <div class="login-window-buttons">
+                        <div class="window-button btn-minimize"></div>
+                        <div class="window-button btn-maximize"></div>
+                        <div class="window-button btn-close"></div>
+                    </div>
+                </div>
+                <div class="login-content">
+                    <h1 class="login-title">SYSTEM LOGIN v1.0</h1>
+                    <form class="login-form">
+                        <div class="form-group">
+                            <label for="username" class="form-label">USERNAME:</label>
+                            <input type="text" id="username" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">PASSWORD:</label>
+                            <input type="password" id="password" class="form-input">
+                            <div class="password-toggle">
+                                <input type="checkbox" id="show-password" class="checkbox">
+                                <label for="show-password">SHOW PASSWORD</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="form-submit">LOGIN<span class="cursor"></span></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="construction-banner">Under Construction</div>
+        </main>
+
+        <footer class="marquee-container">
+            <div class="marquee">
+                * WELCOME TO THE BRUTALIST WEB EXPERIENCE * NO COOKIES * NO TRACKING * NO JAVASCRIPT * PURE HTML/CSS *
+                BEST VIEWED WITH NETSCAPE NAVIGATOR * 800×600 RESOLUTION * COPYRIGHT 1997-2023 * THIS SITE RESPECTS YOUR
+                FREEDOM *
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function updateTime() {
+                const now = new Date();
+                document.getElementById('current-time').textContent = now.toLocaleTimeString();
+            }
+
+            setInterval(updateTime, 1000);
+            updateTime();
+
+            document.getElementById('show-password').addEventListener('change', function () {
+                const passwordInput = document.getElementById('password');
+                passwordInput.type = this.checked ? 'text' : 'password';
+            });
+
+            document.querySelector('.btn-close').addEventListener('click', function () {
+                document.querySelector('.login-box').style.display = 'none';
+                setTimeout(() => {
+                    document.querySelector('.login-box').style.display = 'block';
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+
+</html>
