@@ -175,6 +175,13 @@ A deliberately unpolished login interface embracing raw HTML aesthetics, visible
 
 ![Low-Fi Web Brutalism Preview](/Low-Fi%20Web%20Brutalism/assets/preview.png)
 
+### 👋 25. Tactile Digital
+
+A sensory-rich login interface that bridges physical and digital experiences, featuring textured surfaces, dimensional elements, and haptic feedback simulations that create a tangible user experience reminiscent of physical materials and interactions in a digital context.
+[See More](/Tactile%20Digital/)
+
+![Tactile Digital Preview](/Tactile%20Digital/assets/preview.png)
+
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
