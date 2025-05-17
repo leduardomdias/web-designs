@@ -182,6 +182,12 @@ A sensory-rich login interface that bridges physical and digital experiences, fe
 
 ![Tactile Digital Preview](/Tactile%20Digital/assets/preview.png)
 
+### 🌿 26. Botanical UI
+
+Professional login interface with botanical theme, using dark green and gold tones, organic shapes, and subtle plant-inspired elements creating a sophisticated and nature-connected user experience.
+[See More](/Botanical%20UI/)
+
+![Botanical UI Preview](/Botanical%20UI/assets/preview.png)
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:

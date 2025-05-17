@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Botanical UI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <svg class="leaf-bg" viewBox="0 0 120 120">
+      <path fill="#24543a" d="M60 0C20 30 0 90 60 120C120 90 100 30 60 0Z"/>
+    </svg>
+    <svg class="leaf-bg-left" viewBox="0 0 120 120">
+      <path fill="#bfa14a" d="M60 0C20 30 0 90 60 120C120 90 100 30 60 0Z"/>
+    </svg>
+    <div class="login-logo">
+      <svg viewBox="0 0 48 48">
+        <ellipse cx="24" cy="24" rx="18" ry="22" fill="#fff" stroke="#bfa14a" stroke-width="2"/>
+        <path d="M24 46 Q28 32 24 24 Q20 16 24 2" stroke="#24543a" stroke-width="2" fill="none"/>
+        <circle cx="24" cy="24" r="3" fill="#bfa14a"/>
+      </svg>
+    </div>
+    <div class="login-title">Botanical Portal</div>
+    <div class="login-subtitle">Bem-vindo! Faça login para acessar seu painel.</div>
+    <form class="login-form" autocomplete="off">
+      <div>
+        <label for="user">Usuário ou E-mail</label>
+        <input id="user" type="text" placeholder="Digite seu usuário ou e-mail" required>
+      </div>
+      <div>
+        <label for="pass">Senha</label>
+        <input id="pass" type="password" placeholder="Digite sua senha" required>
+      </div>
+      <button type="submit">Entrar</button>
+    </form>
+    <div class="login-footer">
+      Esqueceu a senha? <a href="#">Recuperar acesso</a>
+    </div>
+  </div>
+</body>
+</html>
