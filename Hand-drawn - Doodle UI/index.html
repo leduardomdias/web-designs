@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doodle Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Comic+Neue:wght@400;700&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="extra-doodles">
+            <svg class="doodle-star" viewBox="0 0 51 48" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" stroke="#F5B700" stroke-width="2" d="M25.5 1l6.6 13.3L47 16.9l-10.7 10.5 2.5 14.8-13.3-7-13.2 7 2.5-14.8L3.9 16.9l14.9-2.6z"/>
+            </svg>
+            <svg class="doodle-arrow" viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1,15 Q12.5,5 25,15 T50,15" fill="none" stroke="#2D3142" stroke-width="2"/>
+                <path d="M40,8 L50,15 L40,22" fill="none" stroke="#2D3142" stroke-width="2"/>
+            </svg>
+            <div class="doodle-circle"></div>
+        </div>
+
+        <div class="doodle-header">
+            <h2>Hey There!</h2>
+            <p class="subtitle">Scribble your details below</p>
+        </div>
+
+        <form class="doodle-form">
+            <div class="form-group">
+                <label for="username">Username or Email</label>
+                <div class="input-wrapper">
+                    <input type="text" id="username" class="doodle-input" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Secret Password</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" class="doodle-input" required>
+                </div>
+            </div>
+
+            <button type="submit" class="doodle-btn">Doodle In!</button>
+        </form>
+
+        <div class="extras">
+            <p>Forgot your secret? <a href="#">Retrieve it!</a></p>
+            <p>New here? <a href="#">Create a sketch</a></p>
+        </div>
+    </div>
+</body>
+</html>

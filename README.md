@@ -188,6 +188,13 @@ Professional login interface with botanical theme, using dark green and gold ton
 [See More](/Botanical%20UI/)
 
 ![Botanical UI Preview](/Botanical%20UI/assets/preview.png)
+
+### ✏️ 27. Hand-drawn / Doodle UI
+
+A playful login interface inspired by hand-drawn sketches and notebook doodles, featuring irregular borders, fun SVG decorations, handwritten fonts, and interactive bouncy effects for a friendly, informal experience.  
+[See More](/Hand-drawn%20-%20Doodle%20UI/)
+
+![Hand-drawn Doodle UI Preview](/Hand-drawn%20-%20Doodle%20UI/assets/preview.png)
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:
