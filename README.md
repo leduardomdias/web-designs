@@ -195,6 +195,13 @@ A playful login interface inspired by hand-drawn sketches and notebook doodles, 
 [See More](/Hand-drawn%20-%20Doodle%20UI/)
 
 ![Hand-drawn Doodle UI Preview](/Hand-drawn%20-%20Doodle%20UI/assets/preview.png)
+
+### 🌀 28. Goblin Mode / Weird Core
+
+A surreal and playful login interface inspired by the Weirdcore and Goblin Mode aesthetics, featuring clashing neon colors, glitchy fonts, animated noise, floating blobs, and intentionally "wrong" alignments for a nostalgic and chaotic vibe.  
+[See More](/Goblin%20Mode%20-%20Weird%20Core/)
+
+![Goblin Mode Weird Core Login Preview](/Goblin%20Mode%20-%20Weird%20Core/assets/preview.png)
 ## 📋 How to Use
 
 Each design style is contained in its own folder with the following structure:

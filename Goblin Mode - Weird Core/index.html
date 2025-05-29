@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeirdCore Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Creepster&family=Press+Start+2P&family=Indie+Flower&family=Comic+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <div class="weird-clip-path"></div>
+    <div class="weird-shapes">
+        <div class="weird-shape shape-1"></div>
+        <div class="weird-shape shape-2"></div>
+        <div class="weird-shape shape-3"></div>
+    </div>
+    
+    <div class="login-container">
+        <span class="retro-icons icon-1">✧</span>
+        <span class="retro-icons icon-2">✿</span>
+        
+        <h2 class="glitch-title">L0G1N_</h2>
+        <p class="subtitle">~* welcome to the weird side *~</p>
+        
+        <form class="login-form">
+            <div class="form-group">
+                <label for="username">ur digital identity</label>
+                <input type="text" id="username" class="weird-input" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">secret incantation</label>
+                <input type="password" id="password" class="weird-input password-input" required>
+            </div>
+            
+            <button type="submit" class="weird-button">E n t e r</button>
+        </form>
+        
+        <div class="login-footer">
+            <p>not a goblin yet? <a href="#" class="weird-link">manifest account</a></p>
+        </div>
+    </div>
+    
+    <div class="cursor-follow"></div>
+    
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const cursorFollow = document.querySelector('.cursor-follow');
+            cursorFollow.style.left = e.clientX + 'px';
+            cursorFollow.style.top = e.clientY + 'px';
+        });
+        
+        document.querySelectorAll('.weird-input, .weird-button').forEach(element => {
+            element.addEventListener('mouseover', function() {
+                const randomRotate = (Math.random() * 3 - 1.5);
+                this.style.transform += ` rotate(${randomRotate}deg)`;
+            });
+            
+            element.addEventListener('mouseout', function() {
+                if (this.classList.contains('password-input')) {
+                    this.style.transform = 'skew(3deg)';
+                } else if (this.classList.contains('weird-button')) {
+                    this.style.transform = 'rotate(1deg)';
+                } else {
+                    this.style.transform = 'skew(-3deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
